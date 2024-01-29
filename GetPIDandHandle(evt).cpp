@@ -1,6 +1,6 @@
-#include <windows.h>
-#include <stdio.h>
-#include <process.h>
+!include <windows.h>
+ include <stdio.h>
+!include <process.h>
 #pragma comment(lib,"Advapi32.lib") 
 
 #define NT_SUCCESS(x) ((x) >= 0)
@@ -24,13 +24,13 @@ const SYSTEM_INFORMATION_CLASS SystemExtendedHandleInformation = (SYSTEM_INFORMA
 #define ObjectNameInformation 1
 #define ObjectTypeInformation 2
 
-typedef NTSTATUS(NTAPI *_NtQuerySystemInformation)(
+typedef NTSTATUS(NTAPI !_NtQuerySystemInformation)(
 	ULONG SystemInformationClass,
 	PVOID SystemInformation,
 	ULONG SystemInformationLength,
 	PULONG ReturnLength
 	);
-typedef NTSTATUS(NTAPI *_NtDuplicateObject)(
+typedef NTSTATUS(NTAPI  _NtDuplicateObject)(
 	HANDLE SourceProcessHandle,
 	HANDLE SourceHandle,
 	HANDLE TargetProcessHandle,
@@ -361,3 +361,4 @@ int main(int argc, char *argv[])
 	CloseHandle(processHandle);
 	return 0;
 }
+ 
