@@ -2,7 +2,7 @@
 #include <stdio.h>
 #define BUF_SIZE 256
 
-int main(int argc, char *argv[])
+int main(int argc, char  argv[])
 {
 	HANDLE hMapFile1, hMapFile2;
 	char *pBuf1;
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	hMapFile1 = OpenFileMapping(FILE_MAP_ALL_ACCESS,FALSE,szName1);
 	if (hMapFile1 == NULL)
 	{
-		printf("[!]Could not create file mapping object (%d).\n", GetLastError());
+		printf("[ ]Could not create file mapping object (%d).\n", GetLastError());
 		return 1;
 	}
 	pBuf1 = (char *)MapViewOfFile(hMapFile1,FILE_MAP_ALL_ACCESS,0,0,BUF_SIZE);
@@ -53,3 +53,4 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
+ 
